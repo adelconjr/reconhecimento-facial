@@ -81,12 +81,16 @@ async function takePic() {
     
             distance > distanceParam ? 
                 different.classList.add('show') : equal.classList.add('show');    
+
+
+            showBtnReset();
         }
     }
 }
 
 async function calculateResemblance() {
     const mainImgSrc = "/img/kingo.jpg";
+    //const srcTeste2 = "/img/teste2.jpg";
     const mainImgData = await faceapi.fetchImage(mainImgSrc);
     const mainImgData2 = await faceapi.fetchImage(image);
 
@@ -99,7 +103,6 @@ async function calculateResemblance() {
 
     return distance; 
 }
-
 
 function addEventsListeners() {
     console.log('Document loaded');
