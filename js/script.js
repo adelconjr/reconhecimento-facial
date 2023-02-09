@@ -22,9 +22,9 @@ const constraints = {
 }
 
 async function loadModels() {
-    await faceapi.nets.ssdMobilenetv1.loadFromUri('/js/models');
-    await faceapi.nets.faceRecognitionNet.loadFromUri('/js/models');
-    await faceapi.nets.faceLandmark68Net.loadFromUri('/js/models');
+    await faceapi.nets.ssdMobilenetv1.loadFromUri('./js/models');
+    await faceapi.nets.faceRecognitionNet.loadFromUri('./js/models');
+    await faceapi.nets.faceLandmark68Net.loadFromUri('./js/models');
 
     console.log('sim');
 
@@ -89,7 +89,7 @@ async function takePic() {
 }
 
 async function calculateResemblance() {
-    const mainImgSrc = "/img/kingo.jpg";
+    const mainImgSrc = "./img/kingo.jpg";
     //const srcTeste2 = "/img/teste2.jpg";
     const mainImgData = await faceapi.fetchImage(mainImgSrc);
     const mainImgData2 = await faceapi.fetchImage(image);
