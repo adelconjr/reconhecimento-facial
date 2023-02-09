@@ -1,0 +1,167 @@
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+}
+
+body,
+#main {
+    background-color: #222;
+}
+
+#camera {
+    width: 100%;
+    height: 600px;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 10px solid #111;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#area-camera{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    background-color: #111;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 20px rgba(100, 0, 120, .8);
+}
+
+.feedback-text {
+    font-size: 1.8rem;
+    color: #FFF;
+    display: none;
+    margin-bottom: 0;
+}
+
+.feedback-text.show {
+    display: block;
+}
+
+#btnTakePic {
+    display: none;
+}
+
+
+
+#btnRefazer > p{
+    height: 60px;
+    line-height: 50px;
+    margin: 0;
+    color: #FFF;
+}
+
+#btnTakePic,
+#btnRefazer {
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 100px;    
+    padding: 0;
+    display: none;
+    margin: 0 auto;
+    bottom: 50px;
+    background-color: #FFF;
+}
+
+#btnTakePic.show {
+    display: grid;
+}
+
+#btnRefazer.show {
+    display: block;
+}
+
+#btnRefazer {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: #9c27b0;
+}
+
+#btnTakePic > div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    transition: all .2s;
+    background-color: #9c27b0;
+}
+
+#btnTakePic:active > div {
+    width: 50px;
+    height: 50px;
+}   
+
+#thumb {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.overlay.show { display: flex; }
+
+.elipse-1,
+.elipse-2,
+.elipse-3 {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #9c27b0;
+    margin: 0 5px;
+    
+}
+
+.overlay.show > .elipse-1 {
+    animation: loading 1s forwards infinite;
+}
+
+.overlay.show > .elipse-2 {
+    animation: loading 1s .2s forwards infinite;
+}
+
+.overlay.show > .elipse-3 {
+    animation: loading 1s .3s  forwards infinite;
+}
+
+@keyframes loading {
+    0% {
+        margin-bottom: 0;
+    }
+    50% {
+        margin-bottom: 100px;
+    }
+
+    100% {
+        margin-bottom: 0;
+    }
+}
